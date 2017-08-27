@@ -3,7 +3,9 @@ import { RouterModule } from '@angular/router';
 import { AppComponent } from './app.component';
 
 export const routes = [
-  {  path: '', component: SettingsComponent }
+  {  path: '', component: SettingsComponent },
+  {  path: 'settings', component: SettingsComponent },
+  {  path: '**', component: SettingsComponent }
 ];
 
 export const routing = RouterModule.forRoot(routes);

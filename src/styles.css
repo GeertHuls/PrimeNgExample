@@ -9,3 +9,46 @@ body {
   background-color: #2F8EE5 !important;
   color: white !important;
 }
+
+.ui-menu {
+  width: auto !important;
+  margin: 0px !important;
+  border: none !important;
+  background-color: #2D353C !important;
+}
+
+.ui-menuitem-text {
+  color: white !important;
+}
+
+.ui-menuitem-icon {
+  color: white !important;
+  font-size: large !important;
+  margin-right: 1em;
+}
+
+.menu-selected {
+  background-color: #F15B2A !important;
+  color: #ffffff;
+}
+
+/* Debugging Layouts
+@media screen and (min-width: 64.063em) {
+  .ui-lg-3 {
+    background-color: green;
+  }
+}
+
+@media screen and (min-width: 40.063em) {
+  .ui-md-6 {
+    background-color: yellow;
+  }
+}
+
+@media screen and (max-width: 40em) {
+  .ui-sm-12 {
+    background-color: palevioletred;
+  }
+}
+*/
+

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem } from 'primeng/primeng';
+import * as jQuery from 'jquery';
 
 @Component({
   selector: 'app-root',
@@ -12,13 +13,23 @@ export class AppComponent implements OnInit {
   miniMenuItems: MenuItem[];
 
   ngOnInit(): void {
+
+    const handleSelected = function(event) {
+      const allMenus = jQuery(event.originalEvent.target).closest('ul');
+      const allLinks = allMenus.find('.menu-selected');
+
+      allLinks.removeClass('menu-selected');
+      const selected = jQuery(event.originalEvent.target).closest('a');
+      selected.addClass('menu-selected');
+    };
+
     this.menuItems = [
-      {label: 'Dashboard', icon: 'fa-home', routerLink: ['/dashboard']},
-      {label: 'All Times', icon: 'fa-calendar', routerLink: ['/alltimes']},
-      {label: 'My Timesheet', icon: 'fa-clock-o', routerLink: ['/timesheet']},
-      {label: 'Add Project', icon: 'fa-tasks', routerLink: ['/projects']},
-      {label: 'My Profile', icon: 'fa-users', routerLink: ['/profile']},
-      {label: 'Settings', icon: 'fa-sliders', routerLink: ['/settings']},
+      {label: 'Dashboard', icon: 'fa-home', routerLink: ['/dashboard'], command: (event) => handleSelected(event)},
+      {label: 'All Times', icon: 'fa-calendar', routerLink: ['/alltimes'], command: (event) => handleSelected(event)},
+      {label: 'My Timesheet', icon: 'fa-clock-o', routerLink: ['/timesheet'], command: (event) => handleSelected(event)},
+      {label: 'Add Project', icon: 'fa-tasks', routerLink: ['/projects'], command: (event) => handleSelected(event)},
+      {label: 'My Profile', icon: 'fa-users', routerLink: ['/profile'], command: (event) => handleSelected(event)},
+      {label: 'Settings', icon: 'fa-sliders', routerLink: ['/settings'], command: (event) => handleSelected(event)},
     ];
 
     this.miniMenuItems = [];

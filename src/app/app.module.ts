@@ -7,11 +7,13 @@ import { MenuModule, PanelModule } from 'primeng/primeng';
 import { routing } from './routing';
 import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { StatisticComponent } from './statistic/statistic.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    SettingsComponent
+    SettingsComponent,
+    StatisticComponent
   ],
   imports: [
     RouterModule,

@@ -3,3 +3,35 @@ p-panel >>> .ui-panel {
   width: 98%;
   min-height: 300px;
 }
+
+.icon {
+  font-size: 80px;
+  margin: 0px;
+  padding: 5px;
+  background:rgba(0,0,0,.1);
+}
+
+.ui-g {
+  padding: 4px;
+}
+
+#statistic {
+  width: 300px;
+  color: white;
+  text-align: center;
+  font-family: "Roboto";
+  background-color: #00ACAC;
+}
+
+.data {
+  padding: 1em;
+  vertical-align: middle;
+}
+
+.value {
+  font-size: 40px;
+}
+
+.label {
+  text-transform: uppercase;
+}

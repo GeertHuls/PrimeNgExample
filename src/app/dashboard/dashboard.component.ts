@@ -38,7 +38,8 @@ export class DashboardComponent {
       {
         label: 'Dev Team',
         backgroundColor: DEFAULT_COLORS[0],
-        data: [65, 59, 80, 55, 67, 73]
+        data: [65, 59, 80, 55, 67, 73],
+        fill: false
       },
       {
         label: 'Ops Team',

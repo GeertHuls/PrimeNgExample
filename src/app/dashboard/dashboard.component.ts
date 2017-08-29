@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, ViewChild } from '@angular/core';
+import { UIChart } from 'primeng/primeng';
+import { Observable } from 'rxjs/Rx';
 
 const DEFAULT_COLORS = ['#3366CC', '#DC3912', '#FF9900', '#109618', '#990099',
   '#3B3EAC', '#0099C6', '#DD4477', '#66AA00', '#B82E2E',
@@ -10,7 +12,9 @@ const DEFAULT_COLORS = ['#3366CC', '#DC3912', '#FF9900', '#109618', '#990099',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent {
+export class DashboardComponent implements AfterViewInit {
+
+  @ViewChild('mixedChart') mixedChart: UIChart;
 
   private hoursByProject = [
     { id: 1, name: 'Payroll App', hoursSpent: 8 },
@@ -97,5 +101,16 @@ export class DashboardComponent {
     const valueClicked = this.hoursByTeamChartDataMixed.datasets[dataSetIndex].data[dataItemIndex];
 
     alert(`Looks like ${labelClicked} worked ${valueClicked} hours`);
+  }
+
+  ngAfterViewInit() {
+      Observable.interval(3000).timeInterval().subscribe(() => {
+        const hoursByTeam = this.hoursByTeamChartDataMixed.datasets;
+        const randomised = hoursByTeam.map((dataset) => {
+
+        dataset.data = dataset.data.map((hours) => hours * (Math.random() * 2));
+      });
+      this.mixedChart.refresh();
+    });
   }
 }

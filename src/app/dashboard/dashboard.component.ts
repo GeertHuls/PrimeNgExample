@@ -49,6 +49,24 @@ export class DashboardComponent {
     ]
   };
 
+  public hoursByTeamChartDataMixed = {
+    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun'],
+    datasets: [
+      {
+        label: 'Dev Team',
+        type: 'bar',
+        backgroundColor: DEFAULT_COLORS[0],
+        data: [65, 59, 80, 55, 67, 73]
+      },
+      {
+        label: 'Ops Team',
+        type: 'line',
+        backgroundColor: DEFAULT_COLORS[1],
+        data: [44, 63, 57, 90, 77, 70]
+      }
+    ]
+  };
+
   private configureDefaultColours(data: number[]): string[] {
     let customColours = []
     if (data.length) {

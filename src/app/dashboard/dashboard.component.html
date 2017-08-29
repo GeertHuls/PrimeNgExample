@@ -6,7 +6,6 @@
 </div>
 
 <div class="ui-g">
-
   <p-panel header="Hours By Project (pie)" class="ui-g-12 ui-md-6">
     <p-chart type="pie"
              [data]="hoursByProjectChartData">
@@ -15,6 +14,14 @@
 
   <p-panel header="Hours By Project (doughnut)" class="ui-g-12 ui-md-6">
     <p-chart type="doughnut"
+             [data]="hoursByProjectChartData">
+    </p-chart>
+  </p-panel>
+</div>
+
+<div class="ui-g">
+  <p-panel header="Hours By Project (polarArea)" class="ui-g-12 ui-md-6">
+    <p-chart type="polarArea"
              [data]="hoursByProjectChartData">
     </p-chart>
   </p-panel>

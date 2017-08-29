@@ -22,7 +22,7 @@ export class DashboardComponent {
   private pieData = this.hoursByProject.map((proj) => proj.hoursSpent);
   private pieColors = this.configureDefaultColours(this.pieData);
 
-  private hoursByProjectChartData = {
+  public hoursByProjectChartData = {
     labels: this.pieLabels,
     datasets: [
       {

@@ -78,4 +78,14 @@ export class DashboardComponent {
 
     return customColours;
   }
+
+  public onDataSelect(event) {
+    const dataSetIndex = event.element._datasetIndex;
+    const dataItemIndex = event.element._index;
+
+    const labelClicked = this.hoursByTeamChartDataMixed.datasets[dataSetIndex].label;
+    const valueClicked = this.hoursByTeamChartDataMixed.datasets[dataSetIndex].data[dataItemIndex];
+
+    alert(`Looks like ${labelClicked} worked ${valueClicked} hours`);
+  }
 }

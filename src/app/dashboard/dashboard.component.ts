@@ -18,6 +18,16 @@ export class DashboardComponent {
     { id: 3, name: 'Point of Sale App', hoursSpent: 24 },
   ];
 
+  public chartOptions = {
+    title: {
+      display: true,
+      text: 'Hours By Project'
+    },
+    legend: {
+      position: 'bottom'
+    },
+  };
+
   private pieLabels = this.hoursByProject.map((proj) => proj.name);
   private pieData = this.hoursByProject.map((proj) => proj.hoursSpent);
   private pieColors = this.configureDefaultColours(this.pieData);

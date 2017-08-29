@@ -4,3 +4,18 @@
   <app-statistic label="Remaining" value="23" icon="fa-hourglass-half" colour="#6C76AF" class="ui-g-12 ui-md-6 ui-lg-3"></app-statistic>
   <app-statistic label="Sprints" value="4" icon="fa-area-chart" colour="#EFA64C" class="ui-g-12 ui-md-6 ui-lg-3"></app-statistic>
 </div>
+
+<div class="ui-g">
+
+  <p-panel header="Hours By Project (pie)" class="ui-g-12 ui-md-6">
+    <p-chart type="pie"
+             [data]="hoursByProjectChartData">
+    </p-chart>
+  </p-panel>
+
+  <p-panel header="Hours By Project (doughnut)" class="ui-g-12 ui-md-6">
+    <p-chart type="doughnut"
+             [data]="hoursByProjectChartData">
+    </p-chart>
+  </p-panel>
+</div>

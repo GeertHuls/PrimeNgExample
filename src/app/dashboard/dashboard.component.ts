@@ -16,7 +16,10 @@ export class DashboardComponent {
   hoursByProjectChartData = {
     labels: ['Payroll App', 'Agile Times App', 'Point of Sale App'],
     datasets: [
-      { data: [8, 16, 24] }
+      {
+        data: [8, 16, 24],
+        backgroundColor: ['#3366CC', '#DC3912', '#FF9900']
+      }
     ]
   };
 }

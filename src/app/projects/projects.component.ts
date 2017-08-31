@@ -21,4 +21,8 @@ export class ProjectsComponent implements OnInit {
   hasFormErrors() {
     return !this.projectForm.valid;
   }
+
+  onSubmit() {
+    alert(JSON.stringify(this.projectForm.value));
+  }
 }

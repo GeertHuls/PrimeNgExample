@@ -1,4 +1,4 @@
-<form [formGroup]="projectForm" class="ui-g">
+<form [formGroup]="projectForm" (ngSubmit)="onSubmit()" class="ui-g">
   <p-panel header="Add Project" class="ui-g-12">
     <div class="ui-g">
       <label for="projectId" class="ui-g-12 ui-md-2">Project Id*</label>
@@ -10,5 +10,6 @@
         </app-fielderrors>
       </div>
     </div>
+    <button type="submit" [disabled]="hasFormErrors()">Save</button>
   </p-panel>
 </form>

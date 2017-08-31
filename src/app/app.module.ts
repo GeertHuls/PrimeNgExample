@@ -9,6 +9,7 @@ import { RouterModule } from '@angular/router';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { StatisticComponent } from './statistic/statistic.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProjectsComponent } from './projects/projects.component';
 
 @NgModule({
@@ -22,6 +23,8 @@ import { ProjectsComponent } from './projects/projects.component';
   imports: [
     RouterModule,
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     BrowserAnimationsModule,
     MenuModule,
     PanelModule,

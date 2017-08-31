@@ -10,6 +10,8 @@
         </app-fielderrors>
       </div>
     </div>
-    <button type="submit" [disabled]="hasFormErrors()">Save</button>
+    <br/>
+    <button pButton type="submit" [disabled]="hasFormErrors()"
+      label="Save" icon="fa-floppy-o"></button>
   </p-panel>
 </form>

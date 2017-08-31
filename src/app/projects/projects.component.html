@@ -13,9 +13,8 @@
 
     <div class="ui-g">
       <label for="description" class="ui-g-12">Description</label>
-      <textarea pInputText id="description" formControlName="description"
-                class="ui-g-12">
-      </textarea>
+      <p-editor id="description" formControlName="description" class="ui-g-12"
+                [style]="{'height':'200px'}"></p-editor>
       <div class="ui-g-12">
         <app-fielderrors [form]="projectForm" field="description" nicename="Description"> </app-fielderrors>
       </div>

@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { SettingsComponent } from './settings/settings.component';
 import {
   MenuModule, PanelModule, ChartModule, InputTextModule, ButtonModule, InputMaskModule,
-  InputTextareaModule
+  InputTextareaModule, EditorModule
 } from 'primeng/primeng';
 import { routing } from './routing';
 import { RouterModule } from '@angular/router';
@@ -38,7 +38,8 @@ import { FielderrorsComponent } from './fielderrors/fielderrors.component';
     InputTextModule,
     ButtonModule,
     InputMaskModule,
-    InputTextareaModule
+    InputTextareaModule,
+    EditorModule
   ],
   providers: [],
   bootstrap: [AppComponent]

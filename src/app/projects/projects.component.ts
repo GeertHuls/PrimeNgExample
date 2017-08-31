@@ -17,4 +17,15 @@ export class ProjectsComponent implements OnInit {
       projectId: ['', [Validators.required, Validators.minLength(5)]]
     });
   }
+
+  hasFormErrors() {
+    return !this.projectForm.valid;
+  }
+
+  fieldErrors(field: string){
+    const controlSate = this.projectForm.controls[field];
+    return (controlSate.dirty && controlSate.errors)
+      ? controlSate.errors
+      : null;
+  }
 }

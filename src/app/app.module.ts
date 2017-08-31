@@ -11,6 +11,7 @@ import { StatisticComponent } from './statistic/statistic.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProjectsComponent } from './projects/projects.component';
+import { FielderrorsComponent } from './fielderrors/fielderrors.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ProjectsComponent } from './projects/projects.component';
     SettingsComponent,
     StatisticComponent,
     DashboardComponent,
-    ProjectsComponent
+    ProjectsComponent,
+    FielderrorsComponent
   ],
   imports: [
     RouterModule,

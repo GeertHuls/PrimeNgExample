@@ -6,11 +6,8 @@
       <input pInputText id="projectId" formControlName="projectId"
                     placeholder="Enter your Project Id" class="ui-g-12 ui-md-5" />
       <div class="ui-g-12 ui-md-5">
-        <div class="ui-message ui-messages-error" *ngIf="fieldErrors('projectId')">
-          <i class="fa fa-close"></i>
-            <span *ngIf="fieldErrors('projectId').required">Project ID is required</span>
-            <span *ngIf="fieldErrors('projectId').minlength">Project ID must be 5 characters</span>
-        </div>
+        <app-fielderrors [form]="projectForm" field="projectId" nicename="Project ID">
+        </app-fielderrors>
       </div>
     </div>
   </p-panel>

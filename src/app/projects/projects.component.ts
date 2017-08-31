@@ -21,11 +21,4 @@ export class ProjectsComponent implements OnInit {
   hasFormErrors() {
     return !this.projectForm.valid;
   }
-
-  fieldErrors(field: string){
-    const controlSate = this.projectForm.controls[field];
-    return (controlSate.dirty && controlSate.errors)
-      ? controlSate.errors
-      : null;
-  }
 }

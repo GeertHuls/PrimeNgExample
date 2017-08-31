@@ -1,3 +1,13 @@
-<p>
-  projects works!
-</p>
+<form [formGroup]="projectForm" class="ui-g">
+  <p-panel header="Add Project" class="ui-g-12">
+    <div class="ui-g">
+      <label for="projectId" class="ui-g-12 ui-md-2">Project Id*</label>
+
+      <input pInputText id="projectId" formControlName="projectId"
+                    placeholder="Enter your Project Id" class="ui-g-12 ui-md-5" />
+      <div class="ui-g-12 ui-md-5">
+        <!--display error messages here -->
+      </div>
+    </div>
+  </p-panel>
+</form>

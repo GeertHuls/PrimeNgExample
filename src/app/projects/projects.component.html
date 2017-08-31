@@ -2,9 +2,9 @@
   <p-panel header="Add Project" class="ui-g-12">
     <div class="ui-g">
       <label for="projectId" class="ui-g-12 ui-md-2">Project Id*</label>
-
-      <input pInputText id="projectId" formControlName="projectId"
-                    placeholder="Enter your Project Id" class="ui-g-12 ui-md-5" />
+      <p-inputMask mask="aaa-999" id="projectId" formControlName="projectId"
+                    placeholder="ABC-123" slotChar="?" class="ui-g-12 ui-md-5">
+      </p-inputMask>
       <div class="ui-g-12 ui-md-5">
         <app-fielderrors [form]="projectForm" field="projectId" nicename="Project ID">
         </app-fielderrors>

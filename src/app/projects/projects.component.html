@@ -10,6 +10,16 @@
         </app-fielderrors>
       </div>
     </div>
+
+    <div class="ui-g">
+      <label for="description" class="ui-g-12">Description</label>
+      <textarea pInputText id="description" formControlName="description"
+                class="ui-g-12">
+      </textarea>
+      <div class="ui-g-12">
+        <app-fielderrors [form]="projectForm" field="description" nicename="Description"> </app-fielderrors>
+      </div>
+    </div>
     <br/>
     <button pButton type="submit" [disabled]="hasFormErrors()"
       label="Save" icon="fa-floppy-o"></button>

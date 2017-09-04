@@ -45,7 +45,11 @@
     <div class="ui-g">
       <label for="devs" class="ui-g-12 ui-md-2">Assigned Devs</label>
       <p-listbox id="devs" [options]="allDevs" [multiple]="true"
-                 formControlName="selectedDevs">
+                 formControlName="selectedDevs" filter="true">
+          <ng-template let-dev pTemplate="item">
+            <img src="http://i.pravatar.cc/100?u={{dev.label}}" class="avatar" />
+            <span class="devName">{{dev.value}}</span>
+          </ng-template>
       </p-listbox>
     </div>
 

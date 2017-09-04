@@ -1,8 +1,15 @@
-<p-dataTable [value]="allTimesheetData" class="ui-g-12"
+<p-dataTable #dt [value]="allTimesheetData" class="ui-g-12"
   sortField="startTime" sortOrder="1" emptyMessage="No time entries found">
   <p-column field="user" header="User"></p-column>
   <p-column field="project" header="Project" [filter]="true"
-    filterPlaceholder="Project search" filterMatchMode="contains"></p-column>
+    filterPlaceholder="Project search" filterMatchMode="equals"
+    [style]="{'overflow': 'visible'}">
+    <ng-template pTemplate="filter" let-col>
+      <p-dropdown [options]='allProjects'
+        [style]="{'width':'100%'}" (onChange)="dt.filter($event.value,col.field,col.filterMatchMode)"
+        styleClass="ui-column-filter"></p-dropdown>
+    </ng-template>
+  </p-column>
   <p-column field="category" header="Category" [sortable]="true"></p-column>
   <p-column field="startTime" header="Start Time" [sortable]="true"></p-column>
   <p-column field="endTime" header="End Time"></p-column>

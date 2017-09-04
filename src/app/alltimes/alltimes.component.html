@@ -1,5 +1,5 @@
 <p-dataTable [value]="allTimesheetData" class="ui-g-12"
-  sortField="startTime" sortOrder="1">
+  sortField="startTime" sortOrder="1" emptyMessage="No time entries found">
   <p-column field="user" header="User"></p-column>
   <p-column field="project" header="Project" [filter]="true"
     filterPlaceholder="Project search"></p-column>
@@ -7,3 +7,4 @@
   <p-column field="startTime" header="Start Time" [sortable]="true"></p-column>
   <p-column field="endTime" header="End Time"></p-column>
 </p-dataTable>
+

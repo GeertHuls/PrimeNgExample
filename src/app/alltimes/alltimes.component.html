@@ -2,7 +2,7 @@
   sortField="startTime" sortOrder="1" emptyMessage="No time entries found">
   <p-column field="user" header="User"></p-column>
   <p-column field="project" header="Project" [filter]="true"
-    filterPlaceholder="Project search"></p-column>
+    filterPlaceholder="Project search" filterMatchMode="contains"></p-column>
   <p-column field="category" header="Category" [sortable]="true"></p-column>
   <p-column field="startTime" header="Start Time" [sortable]="true"></p-column>
   <p-column field="endTime" header="End Time"></p-column>

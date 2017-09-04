@@ -42,6 +42,13 @@
       </p-fieldset>
     </div>
 
+    <div class="ui-g">
+      <label for="devs" class="ui-g-12 ui-md-2">Assigned Devs</label>
+      <p-dropdown id="devs" [options]="allDevs"
+                  formControlName="selectedDevs" class="ui-g-12 ui-md-10">
+      </p-dropdown>
+    </div>
+
     <br/>
     <button pButton type="submit" [disabled]="hasFormErrors()"
       label="Save" icon="fa-floppy-o"></button>

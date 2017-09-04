@@ -55,7 +55,8 @@
     <br/>
     <div class="ui-g">
       <label id="ratingLabel" for="rating" class="ui-g-12 ui-md-2">Project Coolness</label>
-      <p-rating id="rating" formControlName="rating" class="ui-g-12 ui-md-5"></p-rating>      <pre class="ui-g-12 ui-md-5">{{ projectForm.getRawValue() | json }}</pre>
+      <p-rating id="rating" formControlName="rating" class="ui-g-12 ui-md-5" [cancel]="false"></p-rating>
+      <pre class="ui-g-12 ui-md-5">{{ projectForm.getRawValue() | json }}</pre>
     </div>
 
     <button pButton type="submit" [disabled]="hasFormErrors()"

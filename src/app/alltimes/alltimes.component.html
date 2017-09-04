@@ -1,5 +1,6 @@
 <p-dataTable #dt [value]="allTimesheetData" class="ui-g-12"
-  sortField="startTime" sortOrder="1" emptyMessage="No time entries found">
+  sortField="startTime" sortOrder="1" emptyMessage="No time entries found"
+  [reorderableColumns]="true" columnResizeMode="fit" [resizableColumns]="true">
   <p-column field="user" header="User"></p-column>
   <p-column field="project" header="Project" [filter]="true"
     filterPlaceholder="Project search" filterMatchMode="equals"

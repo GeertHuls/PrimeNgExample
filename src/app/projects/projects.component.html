@@ -23,7 +23,7 @@
     <div class="ui-g">
       <label for="startDate" class="ui-g-12 ui-md-2">Start Date</label>
       <p-calendar [showIcon]="true" id="startDate" formControlName="startDate"
-                  dateFormat="dd/mm/yy" class="ui-g-12 ui-md-5">
+                  dateFormat="dd/mm/yy" class="ui-g-12 ui-md-5" [minDate]="minProjectDate">
       </p-calendar>
       <div class="ui-g-12 ui-md-5">
 

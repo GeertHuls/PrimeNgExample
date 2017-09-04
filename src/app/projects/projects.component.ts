@@ -9,6 +9,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 export class ProjectsComponent implements OnInit {
 
   projectForm: FormGroup;
+  minProjectDate = new Date();
 
   constructor(private fb: FormBuilder) { }
 

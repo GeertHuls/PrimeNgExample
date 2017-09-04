@@ -19,6 +19,21 @@
         <app-fielderrors [form]="projectForm" field="description" nicename="Description"> </app-fielderrors>
       </div>
     </div>
+
+    <div class="ui-g">
+      <label for="startDate" class="ui-g-12 ui-md-2">Start Date</label>
+      <p-calendar [showIcon]="true" id="startDate" formControlName="startDate"
+                  dateFormat="dd/mm/yy" class="ui-g-12 ui-md-5">
+      </p-calendar>
+      <div class="ui-g-12 ui-md-5">
+
+        <app-fielderrors [form]="projectForm"
+                         field="startDate"
+                         nicename="Start Date">
+        </app-fielderrors>
+      </div>
+    </div>
+
     <br/>
     <button pButton type="submit" [disabled]="hasFormErrors()"
       label="Save" icon="fa-floppy-o"></button>

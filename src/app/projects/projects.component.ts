@@ -16,6 +16,7 @@ export class ProjectsComponent implements OnInit {
     this.projectForm = this.fb.group({
       projectId: ['', [Validators.required, Validators.minLength(5)]],
       description: ['My cool project', [Validators.required, Validators.maxLength(140)]],
+      startDate: [new Date(), Validators.required],
     });
   }
 

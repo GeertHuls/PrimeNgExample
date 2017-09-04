@@ -35,9 +35,11 @@
     </div>
 
     <div class="ui-g">
-        <p-radioButton name="projGroup" label="Front End" value="F" formControlName="projectType"></p-radioButton>
+      <p-fieldset legend="Project Type" class="ui-g-12" [toggleable]="true" [collapsed]="false">
+      <p-radioButton name="projGroup" label="Front End" value="F" formControlName="projectType"></p-radioButton>
         <p-radioButton name="projGroup" label="Backend End" value="B" formControlName="projectType"></p-radioButton>
         <p-radioButton name="projGroup" label="Operations" value="O" formControlName="projectType"></p-radioButton>
+      </p-fieldset>
     </div>
 
     <br/>

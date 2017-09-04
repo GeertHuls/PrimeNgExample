@@ -23,3 +23,11 @@ p-listbox >>> .ui-listbox {
   margin:15px 10px 0 10px;
   min-height: 100px;
 }
+
+p-rating {
+  font-size: xx-large;
+}
+
+#ratingLabel {
+  margin-top: 20px;
+}

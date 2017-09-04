@@ -6,7 +6,7 @@ import { SettingsComponent } from './settings/settings.component';
 import {
   MenuModule, PanelModule, ChartModule, InputTextModule, ButtonModule, InputMaskModule,
   InputTextareaModule, EditorModule, CalendarModule, RadioButtonModule, FieldsetModule, Dropdown, DropdownModule,
-  MultiSelectModule, ListboxModule, SpinnerModule
+  MultiSelectModule, ListboxModule, SpinnerModule, SliderModule
 } from 'primeng/primeng';
 import { routing } from './routing';
 import { RouterModule } from '@angular/router';
@@ -47,7 +47,8 @@ import { FielderrorsComponent } from './fielderrors/fielderrors.component';
     DropdownModule,
     MultiSelectModule,
     ListboxModule,
-    SpinnerModule
+    SpinnerModule,
+    SliderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

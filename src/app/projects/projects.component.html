@@ -55,7 +55,8 @@
     <br/>
     <div class="ui-g">
       <label id="ratingLabel" for="rating" class="ui-g-12 ui-md-2">Project Coolness</label>
-      <p-spinner id="rating" formControlName="rating" [min]="0" [max]="5"></p-spinner>
+      <p-slider id="rating" class="ui-g-12 ui-md-5"
+        formControlName="rating" [min]="0" [max]="5"></p-slider>
     </div>
 
     <button pButton type="submit" [disabled]="hasFormErrors()"

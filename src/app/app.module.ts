@@ -5,7 +5,8 @@ import { AppComponent } from './app.component';
 import { SettingsComponent } from './settings/settings.component';
 import {
   MenuModule, PanelModule, ChartModule, InputTextModule, ButtonModule, InputMaskModule,
-  InputTextareaModule, EditorModule, CalendarModule, RadioButtonModule, FieldsetModule, Dropdown, DropdownModule
+  InputTextareaModule, EditorModule, CalendarModule, RadioButtonModule, FieldsetModule, Dropdown, DropdownModule,
+  MultiSelectModule
 } from 'primeng/primeng';
 import { routing } from './routing';
 import { RouterModule } from '@angular/router';
@@ -43,7 +44,8 @@ import { FielderrorsComponent } from './fielderrors/fielderrors.component';
     CalendarModule,
     RadioButtonModule,
     FieldsetModule,
-    DropdownModule
+    DropdownModule,
+    MultiSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

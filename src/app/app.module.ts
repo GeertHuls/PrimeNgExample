@@ -6,7 +6,7 @@ import { SettingsComponent } from './settings/settings.component';
 import {
   MenuModule, PanelModule, ChartModule, InputTextModule, ButtonModule, InputMaskModule,
   InputTextareaModule, EditorModule, CalendarModule, RadioButtonModule, FieldsetModule, Dropdown, DropdownModule,
-  MultiSelectModule, ListboxModule, SpinnerModule, SliderModule, RatingModule
+  MultiSelectModule, ListboxModule, SpinnerModule, SliderModule, RatingModule, DataTableModule
 } from 'primeng/primeng';
 import { routing } from './routing';
 import { RouterModule } from '@angular/router';
@@ -16,6 +16,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProjectsComponent } from './projects/projects.component';
 import { FielderrorsComponent } from './fielderrors/fielderrors.component';
+import { AlltimesComponent } from './alltimes/alltimes.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { FielderrorsComponent } from './fielderrors/fielderrors.component';
     StatisticComponent,
     DashboardComponent,
     ProjectsComponent,
-    FielderrorsComponent
+    FielderrorsComponent,
+    AlltimesComponent
   ],
   imports: [
     RouterModule,
@@ -49,7 +51,8 @@ import { FielderrorsComponent } from './fielderrors/fielderrors.component';
     ListboxModule,
     SpinnerModule,
     SliderModule,
-    RatingModule
+    RatingModule,
+    DataTableModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

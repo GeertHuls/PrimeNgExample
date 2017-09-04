@@ -26,7 +26,6 @@
                   dateFormat="dd/mm/yy" class="ui-g-12 ui-md-5" [minDate]="minProjectDate">
       </p-calendar>
       <div class="ui-g-12 ui-md-5">
-
         <app-fielderrors [form]="projectForm"
                          field="startDate"
                          nicename="Start Date">
@@ -54,6 +53,11 @@
     </div>
 
     <br/>
+    <div class="ui-g">
+      <label id="ratingLabel" for="rating" class="ui-g-12 ui-md-2">Project Coolness</label>
+      <p-spinner id="rating" formControlName="rating" [min]="0" [max]="5"></p-spinner>
+    </div>
+
     <button pButton type="submit" [disabled]="hasFormErrors()"
       label="Save" icon="fa-floppy-o"></button>
   </p-panel>

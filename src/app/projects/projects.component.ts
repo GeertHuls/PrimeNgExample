@@ -31,6 +31,7 @@ export class ProjectsComponent implements OnInit {
       startDate: [new Date(), Validators.required],
       projectType: ['B'],
       selectedDevs: [[]],
+      rating: [3],
     });
   }
 

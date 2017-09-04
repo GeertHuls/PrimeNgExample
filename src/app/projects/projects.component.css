@@ -1,3 +1,7 @@
+button {
+  margin-top: 1em;
+}
+
 p-radioButton {
   display:block;
   margin: .7em;

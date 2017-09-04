@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { SettingsComponent } from './settings/settings.component';
 import {
   MenuModule, PanelModule, ChartModule, InputTextModule, ButtonModule, InputMaskModule,
-  InputTextareaModule, EditorModule, CalendarModule
+  InputTextareaModule, EditorModule, CalendarModule, RadioButtonModule
 } from 'primeng/primeng';
 import { routing } from './routing';
 import { RouterModule } from '@angular/router';
@@ -40,7 +40,8 @@ import { FielderrorsComponent } from './fielderrors/fielderrors.component';
     InputMaskModule,
     InputTextareaModule,
     EditorModule,
-    CalendarModule
+    CalendarModule,
+    RadioButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

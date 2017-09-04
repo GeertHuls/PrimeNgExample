@@ -34,6 +34,12 @@
       </div>
     </div>
 
+    <div class="ui-g">
+        <p-radioButton name="projGroup" label="Front End" value="F" formControlName="projectType"></p-radioButton>
+        <p-radioButton name="projGroup" label="Backend End" value="B" formControlName="projectType"></p-radioButton>
+        <p-radioButton name="projGroup" label="Operations" value="O" formControlName="projectType"></p-radioButton>
+    </div>
+
     <br/>
     <button pButton type="submit" [disabled]="hasFormErrors()"
       label="Save" icon="fa-floppy-o"></button>

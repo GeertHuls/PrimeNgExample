@@ -15,7 +15,7 @@ export class AlltimesComponent implements OnInit {
     { user: 'Karen', project: 'Agile Times', category: 'Frontend', startTime: 900, endTime: 1700, date: 1434243 },
     { user: 'Si', project: 'Mobile App', category: 'Operations', startTime: 1100, endTime: 1700, date: 1434243 },
     { user: 'Rohit', project: 'Agile Times', category: 'Backend', startTime: 800, endTime: 1700, date: 1434243 },
-  ]
+  ];
 
   allProjectNames = ['', 'Payroll App', 'Mobile App', 'Agile Times'];
   allProjects = this.allProjectNames.map((proj) => {

@@ -1,6 +1,7 @@
 <p-dataTable #dt [value]="allTimesheetData" class="ui-g-12"
   sortField="startTime" sortOrder="1" emptyMessage="No time entries found"
-  [reorderableColumns]="true" columnResizeMode="fit" [resizableColumns]="true">
+  [reorderableColumns]="true" columnResizeMode="fit" [resizableColumns]="true"
+  [globalFilter]="tableSearch">
   <p-column field="user" header="User"></p-column>
   <p-column field="project" header="Project" [filter]="true"
     filterPlaceholder="Project search" filterMatchMode="equals"
@@ -14,5 +15,9 @@
   <p-column field="category" header="Category" [sortable]="true"></p-column>
   <p-column field="startTime" header="Start Time" [sortable]="true"></p-column>
   <p-column field="endTime" header="End Time"></p-column>
+  <p-footer>
+    <label for="tableSearch">Search: </label>
+    <input id="tableSearch" #tableSearch type="text" placeholder="Search All The Things">
+  </p-footer>
 </p-dataTable>
 

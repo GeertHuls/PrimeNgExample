@@ -1,7 +1,7 @@
 <p-dataTable #dt [value]="allTimesheetData" class="ui-g-12"
   sortField="startTime" sortOrder="1" emptyMessage="No time entries found"
   [reorderableColumns]="true" columnResizeMode="fit" [resizableColumns]="true"
-  [globalFilter]="tableSearch">
+  [globalFilter]="tableSearch" exportFilename="users">
   <p-column field="user" header="User"></p-column>
   <p-column field="project" header="Project" [filter]="true"
     filterPlaceholder="Project search" filterMatchMode="equals"
@@ -18,6 +18,9 @@
   <p-footer>
     <label for="tableSearch">Search: </label>
     <input id="tableSearch" #tableSearch type="text" placeholder="Search All The Things">
+    <button type="button" pButton icon="fa-table" label="Export"
+            (click)="dt.exportCSV()" style="float:right;">
+    </button>
   </p-footer>
 </p-dataTable>
 

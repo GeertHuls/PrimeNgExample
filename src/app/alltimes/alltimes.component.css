@@ -7,3 +7,7 @@ p-dataTable >>> .ui-datatable-footer input {
   font-size: larger;
   padding: 3px;
 }
+
+p-dataTable >>> .ui-datatable-footer {
+  min-height: 60px;
+}

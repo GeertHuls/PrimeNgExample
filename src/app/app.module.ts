@@ -6,7 +6,7 @@ import { SettingsComponent } from './settings/settings.component';
 import {
   MenuModule, PanelModule, ChartModule, InputTextModule, ButtonModule, InputMaskModule,
   InputTextareaModule, EditorModule, CalendarModule, RadioButtonModule, FieldsetModule, Dropdown, DropdownModule,
-  MultiSelectModule, ListboxModule, SpinnerModule, SliderModule, RatingModule, DataTableModule
+  MultiSelectModule, ListboxModule, SpinnerModule, SliderModule, RatingModule, DataTableModule, ContextMenuModule
 } from 'primeng/primeng';
 import { routing } from './routing';
 import { RouterModule } from '@angular/router';
@@ -53,6 +53,7 @@ import { AlltimesComponent } from './alltimes/alltimes.component';
     SliderModule,
     RatingModule,
     DataTableModule,
+    ContextMenuModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

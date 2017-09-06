@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DataTable } from 'primeng/primeng';
+import { DataTable, MenuItem } from 'primeng/primeng';
 
 @Component({
   selector: 'app-alltimes',
@@ -22,11 +22,26 @@ export class AlltimesComponent implements OnInit {
     return { label: proj, value: proj };
   });
 
-   selectedRows: Array<any>;
+  selectedRows: Array<any>;
+  contextMenu: MenuItem[];
 
   constructor() { }
 
   ngOnInit() {
+    this.contextMenu = [
+      { label: 'Debug', icon: 'fa-bug', command: (event) => this.onDebug(this.selectedRows) },
+      { label: 'Delete', icon: 'fa-close', command: (event) => this.onDelete(this.selectedRows) }
+    ];
+  }
+
+  onDebug(selectedRows: any) {
+    console.log(JSON.stringify(selectedRows));
+  }
+
+  onDelete(selectedRows: any) {
+    this.allTimesheetData = this.allTimesheetData.filter((row) => {
+      return !selectedRows.includes(row);
+    });
   }
 
   onEditComplete(editInfo) {

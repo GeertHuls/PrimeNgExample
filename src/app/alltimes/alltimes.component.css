@@ -11,3 +11,7 @@ p-dataTable >>> .ui-datatable-footer input {
 p-dataTable >>> .ui-datatable-footer {
   min-height: 60px;
 }
+
+p-dataTable >>> .selectBoxColumn {
+  width: 43px;
+}

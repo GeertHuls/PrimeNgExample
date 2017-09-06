@@ -24,12 +24,14 @@ export class AlltimesComponent implements OnInit {
 
   selectedRows: Array<any>;
   contextMenu: MenuItem[];
+  recordCount: number;
 
   constructor() {
     for (let x = 0; x < 5; x++) {
       this.allTimesheetData = this.allTimesheetData
         .concat(this.allTimesheetData);
     }
+    this.recordCount = this.allTimesheetData.length;
   }
 
   ngOnInit() {

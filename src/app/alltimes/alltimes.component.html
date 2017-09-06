@@ -5,11 +5,16 @@
   <p-column field="user" header="User" [editable]="true"></p-column>
   <p-column field="project" header="Project" [filter]="true"
     filterPlaceholder="Project search" filterMatchMode="equals"
-    [style]="{'overflow': 'visible'}">
+    [style]="{'overflow': 'visible'}" [editable]="true">
     <ng-template pTemplate="filter" let-col>
       <p-dropdown [options]='allProjects'
         [style]="{'width':'100%'}" (onChange)="dt.filter($event.value,col.field,col.filterMatchMode)"
         styleClass="ui-column-filter"></p-dropdown>
+    </ng-template>
+    <ng-template let-col let-project="rowData" pTemplate="editor">
+      <p-dropdown [(ngModel)]="project[col.field]" [options]="allProjects"
+                  [autoWidth]="false" [style]="{'width':'100%'}" required="true">
+      </p-dropdown>
     </ng-template>
   </p-column>
   <p-column field="category" header="Category" [sortable]="true"></p-column>

@@ -22,6 +22,8 @@ export class AlltimesComponent implements OnInit {
     return { label: proj, value: proj };
   });
 
+   selectedRow: any;
+
   constructor() { }
 
   ngOnInit() {

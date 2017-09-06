@@ -25,7 +25,12 @@ export class AlltimesComponent implements OnInit {
   selectedRows: Array<any>;
   contextMenu: MenuItem[];
 
-  constructor() { }
+  constructor() {
+    for (let x = 0; x < 5; x++) {
+      this.allTimesheetData = this.allTimesheetData
+        .concat(this.allTimesheetData);
+    }
+  }
 
   ngOnInit() {
     this.contextMenu = [

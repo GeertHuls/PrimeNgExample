@@ -17,6 +17,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ProjectsComponent } from './projects/projects.component';
 import { FielderrorsComponent } from './fielderrors/fielderrors.component';
 import { AlltimesComponent } from './alltimes/alltimes.component';
+import { TimesheetComponent } from './timesheet/timesheet.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { AlltimesComponent } from './alltimes/alltimes.component';
     DashboardComponent,
     ProjectsComponent,
     FielderrorsComponent,
-    AlltimesComponent
+    AlltimesComponent,
+    TimesheetComponent
   ],
   imports: [
     RouterModule,

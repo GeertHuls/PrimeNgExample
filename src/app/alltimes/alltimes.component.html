@@ -1,8 +1,8 @@
 <p-dataTable #dt [value]="allTimesheetData" class="ui-g-12"
   sortField="startTime" sortOrder="1" emptyMessage="No time entries found"
   [reorderableColumns]="true" columnResizeMode="fit" [resizableColumns]="true"
-  [globalFilter]="tableSearch" exportFilename="users">
-  <p-column field="user" header="User"></p-column>
+  [globalFilter]="tableSearch" exportFilename="users" [editable]="true">
+  <p-column field="user" header="User" [editable]="true"></p-column>
   <p-column field="project" header="Project" [filter]="true"
     filterPlaceholder="Project search" filterMatchMode="equals"
     [style]="{'overflow': 'visible'}">

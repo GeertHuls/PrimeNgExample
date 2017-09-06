@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { DataTable, MenuItem } from 'primeng/primeng';
+import { DataTable, LazyLoadEvent, MenuItem } from 'primeng/primeng';
 import Dexie from 'dexie';
 import { Observable } from 'rxjs/Observable';
 
@@ -53,7 +53,6 @@ export class AlltimesComponent implements OnInit {
   }
 
   private populateDatabase() {
-
     this.getRecordCount().then((count) => {
       this.recordCount = count;
       if (!count) {
@@ -68,7 +67,7 @@ export class AlltimesComponent implements OnInit {
 
   resetDatabase() {
 
-    let that = this;
+    const that = this;
 
     this.dt.loading = true;
 
@@ -81,9 +80,8 @@ export class AlltimesComponent implements OnInit {
           if (id % 100 === 0) {
             that.getRecordCount().then((count) => {
               that.recordCount = count;
-            })
+            });
           }
-
         },
         function (err) {
           console.log('Do Error: %s', err);
@@ -146,5 +144,38 @@ export class AlltimesComponent implements OnInit {
 
   onRowSelect(rowInfo) {
     console.log(JSON.stringify(rowInfo.data)); // or this.selectedRow
+  }
+
+  loadTimes(event: LazyLoadEvent) {
+
+    console.log(JSON.stringify(event));
+
+    const table = this.db.table('timesheet');
+    let query: any;
+
+    // Dexie doesn't support ordering AND filtering, so we branch here
+    // Alternative strategies here: https://github.com/dfahlander/Dexie.js/issues/297
+    if (event.filters && event.filters['project']) {
+      query = table.where('project').equals(event.filters['project']['value']);
+    } else if (event.globalFilter) {
+      query = table.where('project').startsWithIgnoreCase(event.globalFilter)
+        .or('user').startsWithIgnoreCase(event.globalFilter)
+        .or('category').startsWithIgnoreCase(event.globalFilter);
+    } else {
+      query = table.orderBy(event.sortField);
+    }
+
+    query = query
+      .offset(event.first)
+      .limit(event.rows);
+
+    if (event.sortOrder === -1) {
+      query = query.reverse();
+    }
+
+    query.toArray((nextBlockOfTimes) => {
+      // console.log('Loaded times: %s', JSON.stringify(nextBlockOfTimes));
+      this.allTimesheetData = nextBlockOfTimes;
+    });
   }
 }

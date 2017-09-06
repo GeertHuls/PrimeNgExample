@@ -5,7 +5,8 @@
   (onEditComplete)="onEditComplete($event)" [(selection)]="selectedRows"
   (onRowSelect)="onRowSelect($event)" [contextMenu]="tableContextMenu"
   [paginator]="true" [rows]="5" [rowsPerPageOptions]="[5,10,15,20]"
-  [totalRecords]="recordCount" [pageLinks]="8">
+  [totalRecords]="recordCount" [pageLinks]="8" [lazy]="true"
+  (onLazyLoad)="loadTimes($event)">
 
   <p-column selectionMode="multiple" styleClass="selectBoxColumn"></p-column>
 

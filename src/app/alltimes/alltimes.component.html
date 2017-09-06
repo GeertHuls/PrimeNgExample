@@ -2,7 +2,8 @@
   sortField="startTime" sortOrder="1" emptyMessage="No time entries found"
   [reorderableColumns]="true" columnResizeMode="fit" [resizableColumns]="true"
   [globalFilter]="tableSearch" exportFilename="users" [editable]="true"
-  (onEditComplete)="onEditComplete($event)" selectionMode="single" [(selection)]="selectedRow">
+  (onEditComplete)="onEditComplete($event)" selectionMode="single" [(selection)]="selectedRow"
+  (onRowSelect)="onRowSelect($event)">
   <p-column field="user" header="User" [editable]="true"></p-column>
   <p-column field="project" header="Project" [filter]="true"
     filterPlaceholder="Project search" filterMatchMode="equals"

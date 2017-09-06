@@ -34,4 +34,8 @@ export class AlltimesComponent implements OnInit {
     const newRowValues = editInfo.data;
     alert(`You edited ${fieldChanged} to ${newRowValues[fieldChanged]}`);
   }
+
+  onRowSelect(rowInfo) {
+    console.log(JSON.stringify(rowInfo.data)); // or this.selectedRow
+  }
 }

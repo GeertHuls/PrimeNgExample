@@ -15,3 +15,7 @@ p-dataTable >>> .ui-datatable-footer {
 p-dataTable >>> .selectBoxColumn {
   width: 43px;
 }
+
+p-contextMenu >>> .ui-menuitem-active a {
+  background-color: #F15B2A !important;
+}

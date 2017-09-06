@@ -24,6 +24,7 @@
     "@types/jquery": "^3.2.12",
     "chart.js": "^2.6.0",
     "core-js": "^2.4.1",
+    "dexie": "^1.5.1",
     "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
     "primeng": "^4.1.3",

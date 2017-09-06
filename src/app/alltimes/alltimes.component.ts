@@ -1,5 +1,9 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { DataTable, MenuItem } from 'primeng/primeng';
+import Dexie from 'dexie';
+import { Observable } from 'rxjs/Observable';
+
+const MAX_EXAMPLE_RECORDS = 1000;
 
 @Component({
   selector: 'app-alltimes',
@@ -9,6 +13,7 @@ import { DataTable, MenuItem } from 'primeng/primeng';
 export class AlltimesComponent implements OnInit {
 
   @ViewChild('dt') dt: DataTable;
+  db: Dexie;
 
   allTimesheetData = [
     { user: 'Glen', project: 'Payroll App', category: 'Backend', startTime: 1000, endTime: 1700, date: 1434243 },
@@ -27,11 +32,93 @@ export class AlltimesComponent implements OnInit {
   recordCount: number;
 
   constructor() {
-    for (let x = 0; x < 5; x++) {
-      this.allTimesheetData = this.allTimesheetData
-        .concat(this.allTimesheetData);
-    }
+    // for (let x = 0; x < 5; x++) {
+    //   this.allTimesheetData = this.allTimesheetData
+    //     .concat(this.allTimesheetData);
+    // }
     this.recordCount = this.allTimesheetData.length;
+    this.configureDatabase();
+    this.populateDatabase();
+  }
+
+  private configureDatabase() {
+
+    this.db = new Dexie('AgileTimes');
+
+    // Define a schema
+    this.db.version(1).stores({
+      timesheet: 'id,user,project,category,startTime,endTime,date'
+    });
+
+  }
+
+  private populateDatabase() {
+
+    this.getRecordCount().then((count) => {
+      this.recordCount = count;
+      if (!count) {
+        this.resetDatabase();
+      }
+    });
+  }
+
+  getRecordCount(): Dexie.Promise<number> {
+    return this.db.table('timesheet').count();
+  }
+
+  resetDatabase() {
+
+    let that = this;
+
+    this.dt.loading = true;
+
+    this.db.table('timesheet').clear().then(() => {
+      console.log('Database Cleared');
+      Observable.range(0, MAX_EXAMPLE_RECORDS).do(
+        function (id) {
+          const randomUser = that.generateRandomUser(id);
+          that.db.table('timesheet').add(randomUser);
+          if (id % 100 === 0) {
+            that.getRecordCount().then((count) => {
+              that.recordCount = count;
+            })
+          }
+
+        },
+        function (err) {
+          console.log('Do Error: %s', err);
+        },
+        function () {
+          console.log('Do complete');
+          that.dt.loading = false;
+          that.dt.reset();
+        }).subscribe(() => {
+        console.log('Finished Reset database');
+        that.getRecordCount().then((count) => {
+          that.recordCount = count;
+        });
+      });
+    });
+  }
+
+  generateRandomUser(id: number) {
+
+    const names = ['Joe', 'Mary', 'Phil', 'Karen', 'Si', 'Tim', 'Rohit', 'Jenny', 'Kim', 'Greg', 'Danni']
+    const allProjectNames = ['Payroll App', 'Mobile App', 'Agile Times'];
+    const allCategories = ['Frontend', 'Backend', 'Operations'];
+
+    const newUser = {
+      id: id,
+      user: names[id % names.length],
+      project: allProjectNames[id % allProjectNames.length],
+      category: allCategories[id % allCategories.length],
+      startTime: Math.round(Math.random() * 1000),
+      endTime: Math.round(Math.random() * 1000),
+      date: Math.round(Math.random() * 100000)
+    };
+    newUser.endTime += newUser.startTime; // to make sure it's later
+
+    return newUser;
   }
 
   ngOnInit() {

@@ -6,3 +6,14 @@
     Keeping it simple
   </h3>
 </div>
+
+<p-tabView class="ug-g-12 tabs">
+  <p-tabPanel header="My Times">
+    <p-dataTable [value]="userTimeData" class="timesheet-grid">
+      <p-column field="project" header="Project"></p-column>
+      <p-column field="category" header="Category"></p-column>
+      <p-column field="startTime" header="Start Time"></p-column>
+      <p-column field="endTime" header="End Time"></p-column>
+    </p-dataTable>
+  </p-tabPanel>
+</p-tabView>

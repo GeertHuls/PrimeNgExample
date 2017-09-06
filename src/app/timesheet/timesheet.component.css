@@ -21,3 +21,11 @@ h3 {
   font-size: xx-large;
   display: inline;
 }
+
+.tabs >>> li {
+  width: 19%;
+}
+
+.timesheet-grid >>> .ui-datatable {
+  margin: 1em;
+}

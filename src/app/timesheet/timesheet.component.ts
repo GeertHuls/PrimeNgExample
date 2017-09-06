@@ -15,9 +15,16 @@ export class TimesheetComponent implements OnInit {
     { day: 'Friday', project: 'Agile Times', startTime: '8:00', endTime: '17:00', category: 'Requirements'},
   ];
 
+  daysOfWeek = [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday' ];
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  getTimesForDay(tabName: string) {
+    return this.userTimeData.filter((row) => {
+      return row.day === tabName;
+    });
+  }
 }

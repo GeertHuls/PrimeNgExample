@@ -46,7 +46,7 @@ export class TimesheetComponent implements OnInit {
     right: 'month,agendaWeek,agendaDay'
   };
 
-  private events = [
+  events = [
     {
       title: 'Recent Work',
       start: moment().format(), // '2017-06-02 07:00:00'

@@ -22,6 +22,11 @@
 
 <p-dialog header="Create Time" [modal]="true" [(visible)]="displayEditDialog">
   Our time entry editor goes here.
+
+  <p-footer>
+    <button pButton label="Cancel" icon="fa-times" (click)="cancelDialog()" class="ui-button-secondary"></button>
+    <button pButton label="Save" icon="fa-check" (click)="saveNewEntry()"></button>
+  </p-footer>
 </p-dialog>
 
 <button pButton label="Add time entry" (click)="displayEditDialog = true"></button>

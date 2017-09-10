@@ -39,4 +39,11 @@ export class TimesheetComponent implements OnInit {
     this.day = this.daysOfWeek[index];
     this.dateAndMonth = moment().day(this.day).format('MMMM Do, YYYY');
   }
+
+  saveNewEntry() {
+  }
+
+  cancelDialog() {
+    this.displayEditDialog = false;
+  }
 }

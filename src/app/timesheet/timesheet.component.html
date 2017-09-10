@@ -27,10 +27,10 @@
   </p-steps>
 
   <div *ngSwitchCase="PageNames.TimePage">
-    <p-schedule [events]="events" [header]="headerConfig" styleClass="calendar"
-      defaultView="agendaWeek" [editable]="true" [nowIndicator]="true"
+    <app-schedule [events]="events" [weekends] [header]="headerConfig" styleClass="calendar"
+      defaultView="timelineDay" [editable]="true" [nowIndicator]="true"
       [allDaySlot]="false">
-    </p-schedule>
+    </app-schedule>
   </div>
 
   <div *ngSwitchCase="PageNames.ProjectPage">

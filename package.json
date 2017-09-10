@@ -27,6 +27,7 @@
     "dexie": "^1.5.1",
     "font-awesome": "^4.7.0",
     "fullcalendar": "^3.5.1",
+    "fullcalendar-scheduler": "^1.7.1",
     "jquery": "^3.2.1",
     "moment": "^2.18.1",
     "primeng": "^4.1.3",

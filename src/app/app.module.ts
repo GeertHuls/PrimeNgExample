@@ -7,7 +7,7 @@ import {
   MenuModule, PanelModule, ChartModule, InputTextModule, ButtonModule, InputMaskModule,
   InputTextareaModule, EditorModule, CalendarModule, RadioButtonModule, FieldsetModule, Dropdown, DropdownModule,
   MultiSelectModule, ListboxModule, SpinnerModule, SliderModule, RatingModule, DataTableModule, ContextMenuModule,
-  TabViewModule, DialogModule, StepsModule, ScheduleModule
+  TabViewModule, DialogModule, StepsModule
 } from 'primeng/primeng';
 import { routing } from './routing';
 import { RouterModule } from '@angular/router';
@@ -19,6 +19,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { FielderrorsComponent } from './fielderrors/fielderrors.component';
 import { AlltimesComponent } from './alltimes/alltimes.component';
 import { TimesheetComponent } from './timesheet/timesheet.component';
+import { ScheduleComponent } from './custom-scheduler/custom-scheduler.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { TimesheetComponent } from './timesheet/timesheet.component';
     ProjectsComponent,
     FielderrorsComponent,
     AlltimesComponent,
-    TimesheetComponent
+    TimesheetComponent,
+    ScheduleComponent
   ],
   imports: [
     RouterModule,
@@ -59,8 +61,7 @@ import { TimesheetComponent } from './timesheet/timesheet.component';
     ContextMenuModule,
     TabViewModule,
     DialogModule,
-    StepsModule,
-    ScheduleModule
+    StepsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

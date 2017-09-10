@@ -40,6 +40,20 @@ export class TimesheetComponent implements OnInit {
     { label: 'People' }
   ];
 
+  headerConfig = {
+    left: 'prev,next today',
+    center: 'title',
+    right: 'month,agendaWeek,agendaDay'
+  };
+
+  private events = [
+    {
+      title: 'Recent Work',
+      start: moment().format(), // '2017-06-02 07:00:00'
+      end: moment().add(1, 'hour').format()
+    }
+  ];
+
   constructor() { }
 
   ngOnInit() {

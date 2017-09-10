@@ -27,7 +27,10 @@
   </p-steps>
 
   <div *ngSwitchCase="PageNames.TimePage">
-    Time page goes here.
+    <p-schedule [events]="events" [header]="headConfig" styleClass="calendar"
+      defaultView="agendaWeek" [editable]="true" [nowIndicator]="true"
+      [allDaySlot]="false">
+    </p-schedule>
   </div>
 
   <div *ngSwitchCase="PageNames.ProjectPage">

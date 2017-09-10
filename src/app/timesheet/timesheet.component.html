@@ -1,13 +1,13 @@
 <div class="timesheet header ui-g-12">
   <h2>
-    My timesheet
+    {{ day }}
   </h2>
   <h3>
-    Keeping it simple
+    {{ dateAndMonth }}
   </h3>
 </div>
 
-<p-tabView class="ug-g-12 tabs">
+<p-tabView class="ug-g-12 tabs" (onChange)="onChangeTabs($event)">
   <p-tabPanel header="My Times"
               *ngFor="let day of daysOfWeek;let first = first;" header="{{day}}"
               [selected]="first">

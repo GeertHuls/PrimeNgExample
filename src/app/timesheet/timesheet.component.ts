@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+declare var moment: any;
 
 @Component({
   selector: 'app-timesheet',
@@ -17,6 +18,9 @@ export class TimesheetComponent implements OnInit {
 
   daysOfWeek = [ 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday' ];
 
+  day = 'Monday';
+  dateAndMonth = moment().day(this.day).format('MMMM Do, YYYY');
+
   constructor() { }
 
   ngOnInit() {
@@ -26,5 +30,11 @@ export class TimesheetComponent implements OnInit {
     return this.userTimeData.filter((row) => {
       return row.day === tabName;
     });
+  }
+
+  onChangeTabs(event) {
+    const index = event.index;
+    this.day = this.daysOfWeek[index];
+    this.dateAndMonth = moment().day(this.day).format('MMMM Do, YYYY');
   }
 }

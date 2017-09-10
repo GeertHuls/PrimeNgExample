@@ -30,7 +30,7 @@ export class TimesheetComponent implements OnInit {
   dateAndMonth = moment().day(this.day).format('MMMM Do, YYYY');
 
   displayEditDialog = false;
-
+  PageNames = PageNames;
   dialogPageIndex = PageNames.TimePage;
 
   dialogPages: MenuItem[] = [

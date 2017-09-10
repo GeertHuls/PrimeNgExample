@@ -20,10 +20,27 @@
   </p-tabPanel>
 </p-tabView>
 
-<p-dialog header="Create Time" [modal]="true" [(visible)]="displayEditDialog">
+<p-dialog header="Create Time" [modal]="true" [(visible)]="displayEditDialog"
+  [ngSwitch]="dialogPageIndex">
 
   <p-steps [model]="dialogPages" [(activeIndex)]="dialogPageIndex" [readonly]="false">
   </p-steps>
+
+  <div *ngSwitchCase="PageNames.TimePage">
+    Time page goes here.
+  </div>
+
+  <div *ngSwitchCase="PageNames.ProjectPage">
+    Project page goes here.
+  </div>
+
+  <div *ngSwitchCase="PageNames.PlacePage">
+    Place page goes here.
+  </div>
+
+  <div *ngSwitchCase="PageNames.PeoplePage">
+    People page goes here.
+  </div>
 
   <p-footer>
     <button pButton label="Cancel" icon="fa-times" (click)="cancelDialog()" class="ui-button-secondary"></button>

@@ -1,5 +1,13 @@
 import { Component, OnInit } from '@angular/core';
+import { MenuItem } from 'primeng/primeng';
 declare var moment: any;
+
+export enum PageNames {
+  TimePage,
+  ProjectPage,
+  PlacePage,
+  PeoplePage
+}
 
 @Component({
   selector: 'app-timesheet',
@@ -22,6 +30,15 @@ export class TimesheetComponent implements OnInit {
   dateAndMonth = moment().day(this.day).format('MMMM Do, YYYY');
 
   displayEditDialog = false;
+
+  dialogPageIndex = PageNames.TimePage;
+
+  dialogPages: MenuItem[] = [
+    { label: 'Time' },
+    { label: 'Project' },
+    { label: 'Place' },
+    { label: 'People' }
+  ];
 
   constructor() { }
 

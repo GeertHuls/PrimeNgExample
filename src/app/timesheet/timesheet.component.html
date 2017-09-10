@@ -21,7 +21,9 @@
 </p-tabView>
 
 <p-dialog header="Create Time" [modal]="true" [(visible)]="displayEditDialog">
-  Our time entry editor goes here.
+
+  <p-steps [model]="dialogPages" [(activeIndex)]="dialogPageIndex" [readonly]="false">
+  </p-steps>
 
   <p-footer>
     <button pButton label="Cancel" icon="fa-times" (click)="cancelDialog()" class="ui-button-secondary"></button>

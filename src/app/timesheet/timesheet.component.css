@@ -29,3 +29,7 @@ h3 {
 .timesheet-grid >>> .ui-datatable {
   margin: 1em;
 }
+
+p-schedule >>> .calendar {
+  height: 250px;
+}

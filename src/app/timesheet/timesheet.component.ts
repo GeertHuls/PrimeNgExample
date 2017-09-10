@@ -21,6 +21,8 @@ export class TimesheetComponent implements OnInit {
   day = 'Monday';
   dateAndMonth = moment().day(this.day).format('MMMM Do, YYYY');
 
+  displayEditDialog = false;
+
   constructor() { }
 
   ngOnInit() {

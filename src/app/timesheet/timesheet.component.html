@@ -19,3 +19,9 @@
     </p-dataTable>
   </p-tabPanel>
 </p-tabView>
+
+<p-dialog header="Create Time" [modal]="true" [(visible)]="displayEditDialog">
+  Our time entry editor goes here.
+</p-dialog>
+
+<button pButton label="Add time entry" (click)="displayEditDialog = true"></button>

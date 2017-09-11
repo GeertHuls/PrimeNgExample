@@ -269,7 +269,13 @@ export class ScheduleComponent implements DoCheck, OnDestroy, OnInit, OnChanges,
           'view': view,
           'element': element
         });
-      }
+      },
+      resources: [
+        { id: 'a', title: 'Room A' },
+        { id: 'b', title: 'Room B', eventColor: 'green' },
+        { id: 'c', title: 'Room C', eventColor: 'orange' },
+        { id: 'd', title: 'Room D', eventColor: 'red' }
+      ],
     };
 
     if(this.options) {

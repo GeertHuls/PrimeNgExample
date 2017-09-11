@@ -50,7 +50,8 @@ export class TimesheetComponent implements OnInit {
     {
       title: 'Recent Work',
       start: moment().format(), // '2017-06-02 07:00:00'
-      end: moment().add(1, 'hour').format()
+      end: moment().add(1, 'hour').format(),
+      resourceId: 'b'
     }
   ];
 

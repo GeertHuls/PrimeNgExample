@@ -3,6 +3,8 @@ import { MenuItem, TreeNode } from 'primeng/primeng';
 import { SampleProjectsData } from './sample.projects.data';
 declare var moment: any;
 
+declare var google: any;
+
 export enum PageNames {
   TimePage,
   ProjectPage,
@@ -57,6 +59,18 @@ export class TimesheetComponent implements OnInit {
 
   projectsTree: TreeNode[] = SampleProjectsData.projects;
   selectedProject: TreeNode;
+
+  mapOptions = {
+    center: { lat: -33.8688, lng: 151.2093 },
+    zoom: 5
+  };
+
+  mapOverlays = [
+    new google.maps.Marker({ position: { lat: -35.3075, lng: 149.124417 }, title: 'Canberra Office' }),
+    new google.maps.Marker({ position: { lat: -33.8688, lng: 151.2093 }, title: 'Sydney Office' }),
+    new google.maps.Marker({ position: { lat: -37.813611, lng: 144.963056 }, title: 'Melbourne Office' }),
+    new google.maps.Marker({ position: { lat: -28.016667, lng: 153.4 }, title: 'Gold Coast Office' })
+  ];
 
   constructor() { }
 

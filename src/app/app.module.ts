@@ -7,7 +7,7 @@ import {
   MenuModule, PanelModule, ChartModule, InputTextModule, ButtonModule, InputMaskModule,
   InputTextareaModule, EditorModule, CalendarModule, RadioButtonModule, FieldsetModule, Dropdown, DropdownModule,
   MultiSelectModule, ListboxModule, SpinnerModule, SliderModule, RatingModule, DataTableModule, ContextMenuModule,
-  TabViewModule, DialogModule, StepsModule, ScheduleModule, TreeModule
+  TabViewModule, DialogModule, StepsModule, ScheduleModule, TreeModule, GMapModule
 } from 'primeng/primeng';
 import { routing } from './routing';
 import { RouterModule } from '@angular/router';
@@ -61,7 +61,8 @@ import { TimesheetComponent } from './timesheet/timesheet.component';
     DialogModule,
     StepsModule,
     ScheduleModule,
-    TreeModule
+    TreeModule,
+    GMapModule
   ],
   providers: [],
   bootstrap: [AppComponent]

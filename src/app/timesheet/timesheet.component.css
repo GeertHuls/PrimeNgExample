@@ -33,3 +33,8 @@ h3 {
 p-schedule >>> .calendar {
   height: 250px;
 }
+
+p-gmap >>> .gmap {
+  width:600px;
+  height: 300px;
+}

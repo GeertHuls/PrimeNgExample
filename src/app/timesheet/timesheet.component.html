@@ -39,7 +39,7 @@
   </div>
 
   <div *ngSwitchCase="PageNames.PlacePage">
-    Place page goes here.
+    <p-gmap [options]="mapOptions" [overlays]="mapOverlays" styleClass="gmap"></p-gmap>
   </div>
 
   <div *ngSwitchCase="PageNames.PeoplePage">

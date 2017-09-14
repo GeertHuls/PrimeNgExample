@@ -39,7 +39,8 @@
   </div>
 
   <div *ngSwitchCase="PageNames.PlacePage">
-    <p-gmap [options]="mapOptions" [overlays]="mapOverlays" styleClass="gmap"></p-gmap>
+    <p-gmap [options]="mapOptions" [overlays]="mapOverlays" styleClass="gmap"
+      (onOverlayClick)="onMarkerClick($event)"></p-gmap>
   </div>
 
   <div *ngSwitchCase="PageNames.PeoplePage">

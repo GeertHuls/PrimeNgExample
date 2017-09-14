@@ -89,6 +89,16 @@ export class TimesheetComponent implements OnInit {
     this.dateAndMonth = moment().day(this.day).format('MMMM Do, YYYY');
   }
 
+  onMarkerClick(markerEvent) {
+    const markerTitle = markerEvent.overlay.title;
+    const markerPosition = markerEvent.overlay.position;
+
+    alert(`You clicked on ${markerTitle} at ${markerPosition}`);
+
+    markerEvent.map.panTo(markerPosition);
+    markerEvent.map.setZoom(12);
+  }
+
   saveNewEntry() {
   }
 

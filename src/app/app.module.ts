@@ -8,7 +8,7 @@ import {
   InputTextareaModule, EditorModule, CalendarModule, RadioButtonModule, FieldsetModule, Dropdown, DropdownModule,
   MultiSelectModule, ListboxModule, SpinnerModule, SliderModule, RatingModule, DataTableModule, ContextMenuModule,
   TabViewModule, DialogModule, StepsModule, ScheduleModule, TreeModule, GMapModule, DataGridModule, TooltipModule,
-  ConfirmDialogModule, ConfirmationService
+  ConfirmDialogModule, ConfirmationService, GrowlModule
 } from 'primeng/primeng';
 import { routing } from './routing';
 import { RouterModule } from '@angular/router';
@@ -66,7 +66,8 @@ import { TimesheetComponent } from './timesheet/timesheet.component';
     GMapModule,
     DataGridModule,
     TooltipModule,
-    ConfirmDialogModule
+    ConfirmDialogModule,
+    GrowlModule
   ],
   providers: [ ConfirmationService ],
   bootstrap: [AppComponent]

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ConfirmationService, MenuItem, TreeNode } from 'primeng/primeng';
+import { ConfirmationService, MenuItem, Message, TreeNode } from 'primeng/primeng';
 import { SampleProjectsData } from './sample.projects.data';
 import { SamplePeopleData } from './sample.people.data';
 
@@ -76,6 +76,8 @@ export class TimesheetComponent implements OnInit {
 
   people = SamplePeopleData.people;
 
+  messages: Message[] = [];
+
   constructor(private confirmationService: ConfirmationService) {
   }
 
@@ -105,6 +107,8 @@ export class TimesheetComponent implements OnInit {
   }
 
   saveNewEntry() {
+    this.displayEditDialog = false;
+    this.messages.push({ severity: 'success', summary: 'Entry Created', detail: 'Your entry has been created' });
   }
 
   cancelDialog() {

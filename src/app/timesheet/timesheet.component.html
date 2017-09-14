@@ -34,7 +34,8 @@
   </div>
 
   <div *ngSwitchCase="PageNames.ProjectPage">
-    Project page goes here.
+    <p-tree [value]="projectsTree" layout="horizontal" selectionMode="single"
+            [(selection)]="selectedProject" ></p-tree>
   </div>
 
   <div *ngSwitchCase="PageNames.PlacePage">

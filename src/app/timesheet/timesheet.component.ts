@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuItem } from 'primeng/primeng';
+import { MenuItem, TreeNode } from 'primeng/primeng';
+import { SampleProjectsData } from './sample.projects.data';
 declare var moment: any;
 
 export enum PageNames {
@@ -53,6 +54,9 @@ export class TimesheetComponent implements OnInit {
       end: moment().add(1, 'hour').format()
     }
   ];
+
+  projectsTree: TreeNode[] = SampleProjectsData.projects;
+  selectedProject: TreeNode;
 
   constructor() { }
 

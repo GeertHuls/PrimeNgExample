@@ -38,3 +38,25 @@ p-gmap >>> .gmap {
   width:600px;
   height: 300px;
 }
+
+p-dataGrid >>> .ui-panel {
+  border: 0px;
+}
+
+p-dataGrid >>> .ui-panel-titlebar {
+  font-size: smaller;
+  background-color: #F15B2A !important;
+  text-align: center;
+  height: 35px;
+}
+
+p-dataGrid >>> .ui-panel-content {
+  padding: 0px;
+}
+
+p-dataGrid >>> .ui-panel-content img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 150px;
+}

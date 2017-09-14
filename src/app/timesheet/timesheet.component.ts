@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuItem, TreeNode } from 'primeng/primeng';
 import { SampleProjectsData } from './sample.projects.data';
+import { SamplePeopleData } from './sample.people.data';
+
 declare var moment: any;
 
 declare var google: any;
@@ -71,6 +73,8 @@ export class TimesheetComponent implements OnInit {
     new google.maps.Marker({ position: { lat: -37.813611, lng: 144.963056 }, title: 'Melbourne Office' }),
     new google.maps.Marker({ position: { lat: -28.016667, lng: 153.4 }, title: 'Gold Coast Office' })
   ];
+
+  people = SamplePeopleData.people;
 
   constructor() { }
 

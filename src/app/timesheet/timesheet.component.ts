@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { MenuItem, TreeNode } from 'primeng/primeng';
+import { ConfirmationService, MenuItem, TreeNode } from 'primeng/primeng';
 import { SampleProjectsData } from './sample.projects.data';
 import { SamplePeopleData } from './sample.people.data';
 
@@ -76,7 +76,8 @@ export class TimesheetComponent implements OnInit {
 
   people = SamplePeopleData.people;
 
-  constructor() { }
+  constructor(private confirmationService: ConfirmationService) {
+  }
 
   ngOnInit() {
   }
@@ -107,6 +108,15 @@ export class TimesheetComponent implements OnInit {
   }
 
   cancelDialog() {
-    this.displayEditDialog = false;
+    this.confirmationService.confirm({
+      header: 'Cancel Time Creation',
+      message: 'Cancel all changes. Are you sure?',
+      accept: () => {
+        this.displayEditDialog = false;
+      },
+      reject: () => {
+        console.log('False cancel. Just keep editing.');
+      }
+    });
   }
 }

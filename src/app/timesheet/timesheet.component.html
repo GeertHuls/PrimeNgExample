@@ -61,6 +61,12 @@
 
 <button pButton label="Add time entry" (click)="displayEditDialog = true"></button>
 
-<p-confirmDialog header="Cancel Time Creation" icon="fa fa-question-circle" width="425"
-  [visible]="true" message="Are you sure?">
+<p-confirmDialog icon="fa fa-question-circle" width="425" [visible]="false" #confirmDialog>
+  <p-footer>
+    <button type="button" pButton icon="fa-close" label="No, go back" (click)="confirmDialog.reject()">
+    </button>
+    <button type="button" pButton icon="fa-check" label="Yes, lose changes"
+            (click)="confirmDialog.accept() && confirmDialog.hide()">
+    </button>
+  </p-footer>
 </p-confirmDialog>

@@ -60,3 +60,7 @@
 </p-dialog>
 
 <button pButton label="Add time entry" (click)="displayEditDialog = true"></button>
+
+<p-confirmDialog header="Cancel Time Creation" icon="fa fa-question-circle" width="425"
+  [visible]="true" message="Are you sure?">
+</p-confirmDialog>

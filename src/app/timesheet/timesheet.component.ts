@@ -117,8 +117,10 @@ export class TimesheetComponent implements OnInit {
       message: 'Cancel all changes. Are you sure?',
       accept: () => {
         this.displayEditDialog = false;
+        this.messages.push({ severity: 'info', summary: 'Edits Cancelled', detail: 'No changes were saved' });
       },
       reject: () => {
+        this.messages.push({ severity: 'warn', summary: 'Cancelled the Cancel', detail: 'Please continue your editing' });
         console.log('False cancel. Just keep editing.');
       }
     });

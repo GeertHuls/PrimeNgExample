@@ -5,6 +5,7 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { ProjectsComponent } from './projects/projects.component';
 import { AlltimesComponent } from './alltimes/alltimes.component';
 import { TimesheetComponent } from './timesheet/timesheet.component';
+import { ProfileComponent } from './profile/profile.component';
 
 export const routes = [
   {  path: '', component: DashboardComponent},
@@ -13,6 +14,7 @@ export const routes = [
   {  path: 'alltimes', component: AlltimesComponent},
   {  path: 'timesheet', component: TimesheetComponent},
   {  path: 'settings', component: SettingsComponent },
+  {  path: 'profile', component: ProfileComponent },
   {  path: '**', component: SettingsComponent }
 ];
 

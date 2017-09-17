@@ -20,6 +20,7 @@ import { ProjectsComponent } from './projects/projects.component';
 import { FielderrorsComponent } from './fielderrors/fielderrors.component';
 import { AlltimesComponent } from './alltimes/alltimes.component';
 import { TimesheetComponent } from './timesheet/timesheet.component';
+import { ProfileComponent } from './profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { TimesheetComponent } from './timesheet/timesheet.component';
     ProjectsComponent,
     FielderrorsComponent,
     AlltimesComponent,
-    TimesheetComponent
+    TimesheetComponent,
+    ProfileComponent
   ],
   imports: [
     RouterModule,

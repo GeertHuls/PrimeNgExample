@@ -8,7 +8,7 @@ import {
   InputTextareaModule, EditorModule, CalendarModule, RadioButtonModule, FieldsetModule, Dropdown, DropdownModule,
   MultiSelectModule, ListboxModule, SpinnerModule, SliderModule, RatingModule, DataTableModule, ContextMenuModule,
   TabViewModule, DialogModule, StepsModule, ScheduleModule, TreeModule, GMapModule, DataGridModule, TooltipModule,
-  ConfirmDialogModule, ConfirmationService, GrowlModule
+  ConfirmDialogModule, ConfirmationService, GrowlModule, DragDropModule
 } from 'primeng/primeng';
 import { routing } from './routing';
 import { RouterModule } from '@angular/router';
@@ -69,7 +69,8 @@ import { ProfileComponent } from './profile/profile.component';
     DataGridModule,
     TooltipModule,
     ConfirmDialogModule,
-    GrowlModule
+    GrowlModule,
+    DragDropModule
   ],
   providers: [ ConfirmationService ],
   bootstrap: [AppComponent]

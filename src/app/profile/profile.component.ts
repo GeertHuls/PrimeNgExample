@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Galleria } from 'primeng/primeng';
+import { Galleria, Message } from 'primeng/primeng';
 
 @Component({
   selector: 'app-profile',
@@ -20,6 +20,8 @@ export class ProfileComponent implements OnInit {
 
   selectedProfile: any;
 
+  messages: Message[] = [];
+
   constructor() { }
 
   ngOnInit() {
@@ -36,5 +38,7 @@ export class ProfileComponent implements OnInit {
 
   onPicDrop() {
     this.profileImage = this.selectedProfile.source;
+    this.messages.push({ severity: 'info', summary: 'New Profile',
+      detail: `Changed pic to ${this.selectedProfile.title}` });
   }
 }

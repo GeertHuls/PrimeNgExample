@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Galleria } from 'primeng/primeng';
 
 @Component({
   selector: 'app-profile',
@@ -17,9 +18,23 @@ export class ProfileComponent implements OnInit {
     { source: 'http://i.pravatar.cc/300?u=Peta', title: 'Peta' },
   ];
 
+  selectedProfile: any;
+
   constructor() { }
 
   ngOnInit() {
   }
 
+  onImageSelected(event) {
+    console.log(JSON.stringify(event));
+  }
+
+  onDragStart(galleria: Galleria) {
+    this.selectedProfile = this.images[galleria.activeIndex];
+    galleria.stopSlideshow();
+  }
+
+  onPicDrop() {
+    this.profileImage = this.selectedProfile.source;
+  }
 }

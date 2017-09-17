@@ -16,7 +16,8 @@
   </ng-template>
 </p-panel>
 
-<p-galleria [images]="images" class="ui-g-12 ui-md-7"
+<p-galleria #galleria [images]="images" class="ui-g-12 ui-md-7"
             panelWidth="300" panelHeight="298" [showCaption]="true"
-            pDraggable="profilePic" dragHandle=".ui-panel-images">
+            pDraggable="profilePic" dragHandle=".ui-panel-images"
+            (onImageClicked)="onImageSelected($event)" (onDragStart)="onDragStart(galleria)">
 </p-galleria>
